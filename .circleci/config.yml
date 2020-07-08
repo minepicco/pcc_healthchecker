@@ -1,0 +1,28 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: cc-build-image:latest
+        #aws_auth:
+        #  aws_access_key_id: $AWS_ACCESS_KEY_ID
+        #  aws_secret_access_key: $AWS_SECRET_ACCESS_KEY
+    environment:
+      iname: "minepicco/pcc-healthchecker"
+
+    steps:
+      - checkout
+      - setup_remote_docker
+
+      - run:
+          name: build
+          command: |
+            docker build -t $iname":"$CIRCLE_BUILD_NUM .
+            docker tag $iname":"$CIRCLE_BUILD_NUM $iname":latest"
+      - run:
+          name: docker login
+          command: docker login -u $username -p $password #-e $mailaddress     
+      - run:
+          name: docker push
+          command: |
+            docker push $iname":"$CIRCLE_BUILD_NUM
+            docker push $iname":latest"
