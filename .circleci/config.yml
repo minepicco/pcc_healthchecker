@@ -18,9 +18,11 @@ jobs:
           command: |
             docker build -t $iname":"$CIRCLE_BUILD_NUM .
             docker tag $iname":"$CIRCLE_BUILD_NUM $iname":latest"
+            
       - run:
           name: docker login
-          command: docker login -u $username -p $password #-e $mailaddress     
+          command: docker login -u $username -p $password #-e $mailaddress
+          
       - run:
           name: docker push
           command: |
