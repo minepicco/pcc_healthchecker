@@ -16,6 +16,7 @@ spec:
       name: pccchecker
         ports:
         - containerPort: 80
+          image: minepicco/pcc-healthchecker:latest
           name: pccchecker
         env:
           - name: CHANNEL
