@@ -13,10 +13,8 @@ spec:
         app: pcccecker
     spec:
       containers:
-      name: pccchecker
-      image: minepicco/pcc-healthchecker:latest
-        ports:
-        - containerPort: 80
+      - name: pccchecker
+        image: minepicco/pcc-healthchecker:latest
         env:
           - name: CHANNEL
             value: "YOUR-SLACK-CHANNEL"
