@@ -1,0 +1,32 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: pccchecker
+  labels:
+    app: pccchecker
+spec:
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: pcccecker
+    spec:
+      containers:
+      name: pccchecker
+        ports:
+        - containerPort: 80
+          name: pccchecker
+        env:
+          - name: CHANNEL
+            value: "YOUR-SLACK-CHANNEL"
+          - name: ICON
+            value: "(OPTIONAL)YOUR-FAVORITE-ICON"
+          - name: NAME
+            value: "(OPTIONAL)NAME-OF-SLACK-MESSAGE-SENDER"
+          - name: PCC_URL
+            value: "YOUR-PRISMA-CLOUD-COMPUTE-API-URL"
+          - name: WH_URL
+            value: "YOUR-SLACK-WEBHOOK-URL"
+          - name: ITV
+            value: "(OPTIONAL)HEALTH-CHECK-INTERVAL"
