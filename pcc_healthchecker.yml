@@ -1,12 +1,14 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: pccchecker
   labels:
     app: pccchecker
 spec:
-  strategy:
-    type: Recreate
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pccchecker
   template:
     metadata:
       labels:
@@ -28,3 +30,5 @@ spec:
             value: "YOUR-SLACK-WEBHOOK-URL"
           - name: ITV
             value: "(OPTIONAL)HEALTH-CHECK-INTERVAL"
+          - name: BOT
+            value: "YOUR-SLACK-FILE-UPLOAD-TOKEN"
