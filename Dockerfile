@@ -7,6 +7,7 @@ ENV PCC_URL="https://asia-northeast1.cloud.twistlock.com/"
 ENV WH_URL="https://hooks.slack.com/services/"
 ENV ITV=300
 ENV BOT="xoxp-xxx"
+ENV AWS_TOKEN="AKIA32143215678123456789012431"
 
 COPY pcc_healthchecker.sh /
 RUN chmod +x pcc_healthchecker.sh
