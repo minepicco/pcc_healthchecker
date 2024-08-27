@@ -6,7 +6,7 @@ ENV TEXT="This_is_a_test_message!"
 ENV PCC_URL="https://asia-northeast1.cloud.twistlock.com/"
 ENV WH_URL="https://hooks.slack.com/services/"
 ENV ITV=300
-ENV BOT="xoxp-"
+ENV BOT="xoxp-xxx"
 
 COPY pcc_healthchecker.sh /
 RUN chmod +x pcc_healthchecker.sh
