@@ -25,7 +25,7 @@ spec:
           - name: NAME
             value: "(OPTIONAL)NAME-OF-SLACK-MESSAGE-SENDER"
           - name: PCC_URL
-            value: "YOUR-PRISMA-CLOUD-COMPUTE-API-URL"
+            value: "YOUR-PRISMA-CLOUD-API-URL"
           - name: WH_URL
             value: "YOUR-SLACK-WEBHOOK-URL"
           - name: ITV
