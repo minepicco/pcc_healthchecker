@@ -19,7 +19,7 @@ spec:
         image: minepicco/pcc-healthchecker:latest
         env:
           - name: CHANNEL
-            value: "YOUR-SLACK-CHANNEL"
+            value: "YOUR-SLACK-CHANNEL-NAME"
           - name: ICON
             value: "(OPTIONAL)YOUR-FAVORITE-ICON"
           - name: NAME
